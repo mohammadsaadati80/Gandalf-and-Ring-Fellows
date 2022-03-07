@@ -14534,7 +14534,7 @@ do its job. Our agent is are Dr. Strange. To fight Tanus, Dr. Strange must colle
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
@@ -14555,7 +14555,7 @@ do its job. Our agent is are Dr. Strange. To fight Tanus, Dr. Strange must colle
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">TESTCASE1</span> <span class="o">=</span> <span class="s2">&quot;test_00.txt&quot;</span>
@@ -14599,7 +14599,7 @@ do its job. Our agent is are Dr. Strange. To fight Tanus, Dr. Strange must colle
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
@@ -14905,7 +14905,7 @@ do its job. Our agent is are Dr. Strange. To fight Tanus, Dr. Strange must colle
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">FIFO_queue</span><span class="p">:</span>
@@ -14950,7 +14950,7 @@ and next we will redo these steps until we find goal state.</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">BFS</span><span class="p">:</span>
@@ -15026,13 +15026,13 @@ time we expand a node, we add its state to this set and a
 dictionary that has each state as its key and minimum depth that
 this state has been visited at. Also we stored number of visited
 states and number of unique visited states in this class that we
-update them during the execution of the algorithm. It may be slower than <code>BFS</code> and will just find the first answer which may not be an optimal solution to the problem. It also fails in infinite-depth spaces. The algorithm runs when we call the run_ids() function on its instance. This function calls the subroutine “ids” that executes a depth limited search with the specified depth. We have a loop to increas depth in every iteration of it. Actualy at every iteration we increase depth and run inner loop which is a limited dfs. At every itteration we reset all of data structures to initial values. In limited dfs  We pop first node from stack. Then if it's depth is our limit we didn't add it's children to frontier else we add chidlren to frontier</p>
+update them during the execution of the algorithm. It may be slower than <code>BFS</code> and will just find the first answer which may not be an optimal solution to the problem. It also fails in infinite-depth spaces. The algorithm runs when we call the run_ids() function on its instance. This function calls the subroutine “dls” that executes a depth limited search with the specified depth. We have a loop to increas depth in every iteration of it. Actualy at every iteration we increase depth and run inner loop which is a limited dfs. At every itteration we reset all of data structures to initial values. In limited dfs  We pop first node from stack. Then if it's depth is our limit we didn't add it's children to frontier else we add chidlren to frontier</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">IDS</span><span class="p">:</span>
@@ -15048,7 +15048,7 @@ update them during the execution of the algorithm. It may be slower than <code>B
 		<span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 		<span class="bp">self</span><span class="o">.</span><span class="n">min_depth_explored</span> <span class="o">=</span> <span class="p">{}</span>
 
-	<span class="k">def</span> <span class="nf">ids</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">depth</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">dls</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">depth</span><span class="p">):</span>
 		<span class="bp">self</span><span class="o">.</span><span class="n">number_of_states</span> <span class="o">+=</span> <span class="mi">1</span>
 		<span class="k">if</span> <span class="ow">not</span> <span class="n">node</span><span class="o">.</span><span class="n">get_string</span><span class="p">()</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">unique_states</span><span class="p">:</span>
 			<span class="bp">self</span><span class="o">.</span><span class="n">unique_states</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">get_string</span><span class="p">())</span>
@@ -15061,7 +15061,7 @@ update them during the execution of the algorithm. It may be slower than <code>B
 		<span class="bp">self</span><span class="o">.</span><span class="n">min_depth_explored</span><span class="p">[</span><span class="n">node</span><span class="o">.</span><span class="n">get_string</span><span class="p">()]</span> <span class="o">=</span> <span class="n">depth</span>
 		<span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">get_children</span><span class="p">():</span>
 			<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">child</span><span class="o">.</span><span class="n">get_string</span><span class="p">()</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_depth_explored</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_depth_explored</span><span class="p">[</span><span class="n">child</span><span class="o">.</span><span class="n">get_string</span><span class="p">()]</span> <span class="o">&lt;</span> <span class="n">depth</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-				<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">depth</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+				<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dls</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">depth</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
 					<span class="k">return</span> <span class="kc">True</span>	
 		<span class="k">return</span> <span class="kc">False</span>
 
@@ -15070,7 +15070,7 @@ update them during the execution of the algorithm. It may be slower than <code>B
 		<span class="bp">self</span><span class="o">.</span><span class="n">min_depth_explored</span> <span class="o">=</span> <span class="p">{}</span>
 		<span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">inital_node</span>
 		<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">depth</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dls</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">depth</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
 				<span class="bp">self</span><span class="o">.</span><span class="n">path_cost</span> <span class="o">=</span> <span class="n">depth</span>
 				<span class="k">return</span> <span class="kc">True</span>
 			<span class="n">depth</span> <span class="o">+=</span><span class="mi">1</span>
@@ -15100,7 +15100,7 @@ update them during the execution of the algorithm. It may be slower than <code>B
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">HEAP_queue</span><span class="p">:</span>
@@ -15163,7 +15163,7 @@ and the value of the heuristic function. At first we add intial state into front
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">A_STAR</span><span class="p">:</span>
@@ -15274,7 +15274,7 @@ and the value of the heuristic function. At first we add intial state into front
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">read_data</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
@@ -15346,7 +15346,7 @@ and the value of the heuristic function. At first we add intial state into front
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">run_BFS</span><span class="p">(</span><span class="n">test_file</span><span class="p">):</span>
@@ -15377,7 +15377,7 @@ and the value of the heuristic function. At first we add intial state into front
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">run_IDS</span><span class="p">(</span><span class="n">test_file</span><span class="p">):</span>   
@@ -15408,7 +15408,7 @@ and the value of the heuristic function. At first we add intial state into front
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">run_A_STAR</span><span class="p">(</span><span class="n">test_file</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
@@ -15439,7 +15439,7 @@ and the value of the heuristic function. At first we add intial state into front
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">run_test</span><span class="p">(</span><span class="n">test_file</span><span class="p">):</span>
@@ -15458,7 +15458,7 @@ and the value of the heuristic function. At first we add intial state into front
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Testcase #1....</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -15486,38 +15486,38 @@ and the value of the heuristic function. At first we add intial state into front
 
 $ BFS $
 Path Cost: 48
-Path:  R R R R R R R R R R R R R R R R R R R R R R R R R R R R R D U R D R U D U R D R U D R R R R R R
-Number of Visited States: 10508
-Number of Unique Visited States: 6427
-Average Execution Time for 3 BFS runs: 0.18037589391072592 seconds
+Path:  R R R R R R R R R R R R R R R R R R R R R R R R R R R R R D U R D U R D U R D U R D R R R R R R
+Number of Visited States: 10506
+Number of Unique Visited States: 6429
+Average Execution Time for 3 BFS runs: 0.1853179136912028 seconds
 
 $ IDS $
 Path Cost: 48
-Path: R R R R R R D U R D R U D U R D R U D R R R R R R R R R R R R R R R R R R R R R R R R R R R R R 
-Number of Visited States: 49065
-Number of Unique Visited States: 7181
-Average Execution Time for 3 IDS runs: 0.9299057324727377 seconds
+Path: R R R R R R D R U D R U D U R D R U D R R R R R R R R R R R R R R R R R R R R R R R R R R R R R 
+Number of Visited States: 48315
+Number of Unique Visited States: 7110
+Average Execution Time for 3 IDS runs: 0.9321852525075277 seconds
 
 $ A* Search $
 Path Cost: 48
-Path:  R R R R R R R R R R R R R R R R R R R R R R R R R R R R R D U R D R U D R U D U R D R R R R R R
+Path:  R R R R R R R R R R R R R R R R R R R R R R R R R R R R R D R U D R U D U R D R U D R R R R R R
 Number of Visited States: 3008
 Number of Unique Visited States: 1968
-Average Execution Time for 3 A* runs: 0.059287707010904946 seconds
+Average Execution Time for 3 A* runs: 0.06449747085571289 seconds
 
 $ Weighted A* Search with Alpha = 2.25 $
 Path Cost: 48
-Path:  R R R R R R R R R R R R R R R R R R R R R R R R R R R R R D U R D R U D U R D R U D R R R R R R
+Path:  R R R R R R R R R R R R R R R R R R R R R R R R R R R R R D U R D R U D R U D U R D R R R R R R
 Number of Visited States: 1151
 Number of Unique Visited States: 778
-Average Execution Time for 3 A* runs: 0.024802684783935547 seconds
+Average Execution Time for 3 A* runs: 0.024983882904052734 seconds
 
 $ Weighted A* Search with Alpha = 5.25 $
 Path Cost: 48
-Path:  R R R R R R R R R R R R R R R R R R R R R R R R R R R R R D U R D U R D U R D U R D R R R R R R
+Path:  R R R R R R R R R R R R R R R R R R R R R R R R R R R R R D U R D R U D R U D U R D R R R R R R
 Number of Visited States: 979
 Number of Unique Visited States: 642
-Average Execution Time for 3 A* runs: 0.02479855219523112 seconds
+Average Execution Time for 3 A* runs: 0.01883522669474284 seconds
 
 </pre>
 </div>
@@ -15530,7 +15530,7 @@ Average Execution Time for 3 A* runs: 0.02479855219523112 seconds
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Testcase #2....</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -15558,38 +15558,38 @@ Average Execution Time for 3 A* runs: 0.02479855219523112 seconds
 
 $ BFS $
 Path Cost: 52
-Path:  D R R D R R D L L D D D D D L R R R U U U U U R R L D D L D L D D R U U U U R R R R D D D D L L L R R R
-Number of Visited States: 2027
-Number of Unique Visited States: 1383
-Average Execution Time for 3 BFS runs: 0.031117757161458332 seconds
+Path:  R R D D R R D D D D D L D L L U R R R U U R U R U D L L D D D D L R U U U R U R R R D D D D L L L R R R
+Number of Visited States: 2008
+Number of Unique Visited States: 1372
+Average Execution Time for 3 BFS runs: 0.03251441319783529 seconds
 
 $ IDS $
 Path Cost: 52
-Path: R R R L L L D D D D R R R U R U R U U D D L D L D D L R R R R U U U U U R L D D D D L L D D R R D R R D 
-Number of Visited States: 32197
-Number of Unique Visited States: 1390
-Average Execution Time for 3 IDS runs: 0.5964763959248861 seconds
+Path: R R R L L D L D D D R R R R U U R U U D L D D D L L D R R U R R U U U U R D L L L D D D D D R R D R D R 
+Number of Visited States: 31367
+Number of Unique Visited States: 1391
+Average Execution Time for 3 IDS runs: 0.6094333330790201 seconds
 
 $ A* Search $
 Path Cost: 52
-Path:  R D R D R R L L D D D D D L D U R U U U R R U R R D L D L D D D L R R R R U R U U U D D D D L L L R R R
+Path:  R R R R D D L L D D D D D D L R U R R U U U R U R L L D D D D D L R U U U R U R R R D D D L D L L R R R
 Number of Visited States: 1494
 Number of Unique Visited States: 1051
-Average Execution Time for 3 A* runs: 0.026083866755167644 seconds
+Average Execution Time for 3 A* runs: 0.02542424201965332 seconds
 
 $ Weighted A* Search with Alpha = 2.25 $
 Path Cost: 58
-Path:  R D R D R D R R D R R R D D D L D L L U L U U U U R R D L D L D L D D U U R U U U U D L L D D D D L D R R R R R R R
-Number of Visited States: 661
-Number of Unique Visited States: 466
-Average Execution Time for 3 A* runs: 0.011309146881103516 seconds
+Path:  R D R D R D R R D R R R D D D L D L L U L U U U U R R L L D D D L D D U U R U U U U D L L D D D D D L R R R R R R R
+Number of Visited States: 658
+Number of Unique Visited States: 465
+Average Execution Time for 3 A* runs: 0.011091232299804688 seconds
 
 $ Weighted A* Search with Alpha = 5.25 $
 Path Cost: 58
-Path:  R D R D R D R R D R R R D D D D L L L U L U U U U U D D D D D L D L L U R U R R U U R U R L L D D D L D D R R R R R
-Number of Visited States: 507
-Number of Unique Visited States: 362
-Average Execution Time for 3 A* runs: 0.008912007013956705 seconds
+Path:  R R R R D R D D D R R R D D D L D L L U L U U U U R R L D L D D D L D U U R U U U U L D D L D D D L D R R R R R R R
+Number of Visited States: 636
+Number of Unique Visited States: 445
+Average Execution Time for 3 A* runs: 0.009800434112548828 seconds
 
 </pre>
 </div>
@@ -15602,7 +15602,7 @@ Average Execution Time for 3 A* runs: 0.008912007013956705 seconds
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Testcase #3....</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -15630,38 +15630,38 @@ Average Execution Time for 3 A* runs: 0.008912007013956705 seconds
 
 $ BFS $
 Path Cost: 34
-Path:  R R R R R R R D L L D L L D D D L L L D R D U U R R U R R R D R D D
-Number of Visited States: 538
-Number of Unique Visited States: 377
-Average Execution Time for 3 BFS runs: 0.00963894526163737 seconds
+Path:  R R R R R R R D L L L L D D D D L L L R D D R U U U R R R R D D R D
+Number of Visited States: 544
+Number of Unique Visited States: 380
+Average Execution Time for 3 BFS runs: 0.00922377904256185 seconds
 
 $ IDS $
 Path Cost: 34
-Path: D D R R D R R R U R U U R D D L L D L D D L D L D L L R R R R R R R 
-Number of Visited States: 5366
-Number of Unique Visited States: 401
-Average Execution Time for 3 IDS runs: 0.08806498845418294 seconds
+Path: R D D R D R R U R R U U D D R L L D L D D D D L L L L R R R R R R R 
+Number of Visited States: 5351
+Number of Unique Visited States: 400
+Average Execution Time for 3 IDS runs: 0.09029229482014973 seconds
 
 $ A* Search $
 Path Cost: 34
-Path:  R R R R R R R D L L L L D D D L D L L D R D U U R R U R R R D R D D
-Number of Visited States: 165
-Number of Unique Visited States: 119
-Average Execution Time for 3 A* runs: 0.002724170684814453 seconds
+Path:  R R R R R R R D D D D L L L L D L L L D D R U R U R U R R R D R D D
+Number of Visited States: 168
+Number of Unique Visited States: 121
+Average Execution Time for 3 A* runs: 0.002678473790486654 seconds
 
 $ Weighted A* Search with Alpha = 2.25 $
 Path Cost: 34
-Path:  R R R R R R R L D L L L D D D L D L L D D R U U R R U R R R D R D D
-Number of Visited States: 129
+Path:  R R R R R R R D D D D L L L L D L L L R D D U U R R U R R D R R D D
+Number of Visited States: 130
 Number of Unique Visited States: 100
-Average Execution Time for 3 A* runs: 0.0022072792053222656 seconds
+Average Execution Time for 3 A* runs: 0.002121527989705404 seconds
 
 $ Weighted A* Search with Alpha = 5.25 $
 Path Cost: 34
-Path:  R R R R R R R D D D L L D L L D L L L D D R R U U R U R R R D D R D
+Path:  R R R R R R R L D L D D D L L L D L L R D D U U R R U R R D R R D D
 Number of Visited States: 122
 Number of Unique Visited States: 95
-Average Execution Time for 3 A* runs: 0.0020786126454671225 seconds
+Average Execution Time for 3 A* runs: 0.002019961675008138 seconds
 
 </pre>
 </div>
@@ -15674,7 +15674,7 @@ Average Execution Time for 3 A* runs: 0.0020786126454671225 seconds
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Testcase #4....</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -15702,38 +15702,38 @@ Average Execution Time for 3 A* runs: 0.0020786126454671225 seconds
 
 $ BFS $
 Path Cost: 66
-Path:  R R D D D D D D D D L L D R U R R R R U U U R R R U U R U U U L L L L L L D L D D D D D D D L D R R R U R U U U U R R R R D D D D D
-Number of Visited States: 5895
-Number of Unique Visited States: 3942
-Average Execution Time for 3 BFS runs: 0.09748729070027669 seconds
+Path:  R D D D R D D L D L D D R D U R R U R U U R U R R U R R U U U L L D L D D L D L D D D L L D L D U R R U R U R U U R R R R D D D D D
+Number of Visited States: 5862
+Number of Unique Visited States: 3921
+Average Execution Time for 3 BFS runs: 0.09180061022440593 seconds
 
 $ IDS $
 Path Cost: 66
-Path: D D D D D R R R R R R R U U U U R U L D D D D D L L L D L D D L D L L R R U U R U R U U U U U R R R R U R D L L D D D D D R D R D D 
-Number of Visited States: 102637
-Number of Unique Visited States: 3963
-Average Execution Time for 3 IDS runs: 2.1066364447275796 seconds
+Path: D D D D D R R R R U U U R R U R R U L D D D D D D D D D L L L L L L L U U U U U R R R R U U R U U R R R D R D D L D L D D D D D R R 
+Number of Visited States: 105259
+Number of Unique Visited States: 3979
+Average Execution Time for 3 IDS runs: 2.0891745885213218 seconds
 
 $ A* Search $
 Path Cost: 72
-Path:  R R D D D D D L D L D D R D U R U R R U U R R U U U U U R R R L D L L D D D L R R R R L L U U U U D D L D L D D L L L D D D L D R R R R R R R R
-Number of Visited States: 3344
+Path:  R R D D D D D D L L D D R D R U U R R R U U U R U U R U U R R L D L L D D D L R R R R U U U U L L D D L D D L D D L D D L D L L R R R R R R R R
+Number of Visited States: 3345
 Number of Unique Visited States: 2296
-Average Execution Time for 3 A* runs: 0.06471657752990723 seconds
+Average Execution Time for 3 A* runs: 0.05953113238016764 seconds
 
 $ Weighted A* Search with Alpha = 2.25 $
-Path Cost: 78
-Path:  R R R R R R R L D D D D D D L L D L D D L L R U R R R U U U R R U U U U R R U L D L L D D D D L L U L U L D D D D D L L R R U R R U R U U R R R R D D D D D
-Number of Visited States: 874
-Number of Unique Visited States: 632
-Average Execution Time for 3 A* runs: 0.016060034434000652 seconds
+Path Cost: 76
+Path:  R R R R R R R L D D D D D L L L L D D D D L U R R R R U U U R U R U U U R U R D L L D L D D L R R R R L L L L L L U L D D L D L D D R R R R R D R R R R
+Number of Visited States: 809
+Number of Unique Visited States: 584
+Average Execution Time for 3 A* runs: 0.01587669054667155 seconds
 
 $ Weighted A* Search with Alpha = 5.25 $
 Path Cost: 78
-Path:  R R R R R R R D L D D D L L L L D D D D D L U R U U U U U U U U R R R R R R R L D L D L D D D L L U L L U D D D D D L L R R U U U U R R R R R R R D D D D D
+Path:  R R R R R R R D D D L L D L L L D D D D D L U R U U U R R R R U U R R R U U U L L D D L D D D L L U L L U D D D D D L L R R R U R R U U U R R R R D D D D D
 Number of Visited States: 682
 Number of Unique Visited States: 484
-Average Execution Time for 3 A* runs: 0.013467709223429361 seconds
+Average Execution Time for 3 A* runs: 0.018308162689208984 seconds
 
 </pre>
 </div>
