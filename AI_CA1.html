@@ -14523,7 +14523,7 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h2><p>In this project, we are going to find a suitable solution for the following problem and implement it by using uninformed search algorithms (BFS and IDS) and informed search algorithms (A<em> and weighted A</em>).</p>
-<p>The goal of this computer assignment to help our agent to do its job. Our agent is are Gandalf. Gray Gandalf confronts the Lord of Darkness with the goal of leading and guiding the mission ring allies with Sauron. To do this, he must pass the allies of the ring through the orcs, which are Sauron's army, and bring each one to a specific position, and at the end he goes to Gondor.</p>
+<p>The goal of this computer assignment to help our agent to do its job. Our agent is Gandalf. Gray Gandalf is tasked with confronting Sauron, the lord of darkness, with the goal of leading and guiding the ring fellows. To do this, he must pass the fellows of the ring through the orcs, which are Sauron's army, and bring each one to a specific position, and at the end he goes to Gondor.</p>
 
 </div>
 </div>
@@ -14563,7 +14563,6 @@ a.anchor-link {
 <span class="n">TESTCASE3</span> <span class="o">=</span> <span class="s2">&quot;test_02.txt&quot;</span>
 <span class="n">TESTCASE4</span> <span class="o">=</span> <span class="s2">&quot;test_03.txt&quot;</span>
 <span class="n">NUMBER_OF_TEST_REPETITIONS</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">WALL</span> <span class="o">=</span> <span class="s2">&quot;#&quot;</span>
 <span class="n">BLANK</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span>
 <span class="n">HELPER</span> <span class="o">=</span> <span class="s2">&quot;h&quot;</span>
 <span class="n">EUREKA</span> <span class="o">=</span> <span class="s2">&quot;e&quot;</span>
@@ -14579,6 +14578,9 @@ a.anchor-link {
 <span class="n">LOW_WEIGHTED</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">SMALL_ALPHA</span> <span class="o">=</span> <span class="mf">2.25</span>
 <span class="n">BIG_ALPHA</span> <span class="o">=</span> <span class="mf">12.25</span>
+<span class="n">MAP_LENGHT</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">MAP_WIDTH</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">NUMBER_OF_FELLOWS</span> <span class="o">=</span> <span class="mi">0</span>
 </pre></div>
 
      </div>
@@ -14648,6 +14650,7 @@ a.anchor-link {
 		<span class="n">move</span> <span class="o">=</span> <span class="kc">False</span>
 		<span class="n">i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gandalf_x</span>
 		<span class="n">j</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gandalf_y</span>
+        
 		<span class="k">if</span> <span class="n">action</span> <span class="o">==</span> <span class="n">RIGHT</span><span class="p">:</span>
 			<span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">game_map</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
 				<span class="n">move</span> <span class="o">=</span> <span class="kc">False</span>
@@ -14663,7 +14666,8 @@ a.anchor-link {
 		<span class="k">elif</span> <span class="n">action</span> <span class="o">==</span> <span class="n">UP</span><span class="p">:</span>
 			<span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
 				<span class="n">move</span> <span class="o">=</span> <span class="kc">False</span>
-				<span class="k">return</span>           
+				<span class="k">return</span> 
+            
 		<span class="n">gandalf_x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gandalf_x</span>
 		<span class="n">gandalf_y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gandalf_y</span>
 		<span class="n">end_x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_x</span>
@@ -14676,6 +14680,7 @@ a.anchor-link {
 		<span class="n">cur_eureka_area</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cur_eureka_area</span>
 		<span class="n">eureka_area_cur_capacity</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">eureka_area_cur_capacity</span>
 		<span class="n">is_helpers_reach_des</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_helpers_reach_des</span><span class="p">[:]</span>
+        
 		<span class="k">if</span> <span class="n">game_map</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">delta_x</span><span class="p">][</span><span class="n">j</span><span class="o">+</span><span class="n">delta_y</span><span class="p">][</span><span class="n">TYPE</span><span class="p">]</span> <span class="o">!=</span> <span class="n">EUREKA</span><span class="p">:</span>
 			<span class="n">eureka_area_cur_capacity</span> <span class="o">=</span> <span class="mi">0</span>
 			<span class="n">cur_eureka_area</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
@@ -14917,7 +14922,7 @@ update them during the execution of the algorithm. It may be slower than <code>B
 		<span class="n">depth</span> <span class="o">=</span> <span class="mi">1</span>
 		<span class="bp">self</span><span class="o">.</span><span class="n">min_depth_explored</span> <span class="o">=</span> <span class="p">{}</span>
 		<span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">inital_node</span>
-		<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="n">MAP_LENGHT</span><span class="o">*</span><span class="n">MAP_WIDTH</span><span class="o">*</span><span class="n">NUMBER_OF_FELLOWS</span><span class="p">):</span>
 			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dls</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">depth</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
 				<span class="bp">self</span><span class="o">.</span><span class="n">path_cost</span> <span class="o">=</span> <span class="n">depth</span>
 				<span class="k">return</span> <span class="kc">True</span>
@@ -14978,23 +14983,28 @@ update them during the execution of the algorithm. It may be slower than <code>B
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="A*-Algorithm">A* Algorithm<a class="anchor-link" href="#A*-Algorithm">&#182;</a></h3><p>This algorithm is very similar to <code>BFS</code> algorithm, but it uses a priority queue as it's frontier instead. The A<em> class 
-has a frontier set that is implemented by min-heap queue
-that its indicator for choosing a node is the value of the evaluating
-function </em>f*. The argument of this function is a node and the
-return value of this function is sum of the path_cost of the node
+has a frontier set that is implemented by min-heap queue that its indicator for choosing a node is the value of the evaluating
+function </em>f*. The argument of this function is a node and the return value of this function is sum of the path_cost of the node
 and the value of the heuristic function. At first we add intial state into frontier and then pop it from the queue. Then all possible actions from initial values which does not explored before, will add to the frontier and next we will redo these steps until we find goal state.</p>
-<h4 id="Heuristic:">Heuristic:<a class="anchor-link" href="#Heuristic:">&#182;</a></h4><p>Summation of the minimum manhatan distances from all potions to the final destination added to the length of the path already traversed.</p>
+<h4 id="Heuristic:">Heuristic:<a class="anchor-link" href="#Heuristic:">&#182;</a></h4><ul>
+<li><p>When all the Helpers have reached their destination, the heuristic is the Manhattan distance from Gandalf's current location to Gandalf's final destination.</p>
+</li>
+<li><p>When Gandalf picks a Helper to reach his destination, the heuristic is the Manhattan distance from Gandalf's current location to the destination of the Helper he picks, plus the Manhattan distance from the destination of the Helper he delivered to Gandalf's final destination.</p>
+</li>
+<li><p>When Gandalf has not selected a helper to reach his destination, the heuristic is the maximum of Manhattan distance of Gandalf's current location to the origin of any helper that has not reached its destination, plus the Manhattan distance from the origin of any remaining helper to its destination, plus the Manhattan distance from Helper's destination to Gandalf's final destination.</p>
+</li>
+</ul>
 <h4 id="Proof-of-Consistency:">Proof of Consistency:<a class="anchor-link" href="#Proof-of-Consistency:">&#182;</a></h4><p>If the following equation holds, a heuristic is consistant:</p>
 <p>$ cost(A to C) \geq h(A) - h(C)$</p>
 <p>We need to check for every possible move the difference of the heuristics is less than or equal to one:</p>
 <ul>
-<li><p>Doctor moves a potion closer to the final destination:
-  In this case the the potion moves one step closer so the value will also be less than or equal to one.</p>
+<li><p>Gandalf moves a Helper closer to the his destination:
+  In this case the the Helper moves one step closer so the value will also be less than or equal to one.</p>
 </li>
-<li><p>Doctor moves without moving any patients:
+<li><p>Gandalf moves without moving any Helpers:
   In this case the heusitics for state C and A are equal therfore the difference is equal to zero and the quation holds.</p>
 </li>
-<li><p>Doctor moves a potion further away from the final destination:
+<li><p>Gandalf moves a Helper further away from the his destination:
   In this case the heuristic of the later state is larger so the value will become negative so the equation holds.</p>
 </li>
 </ul>
@@ -15137,6 +15147,9 @@ and the value of the heuristic function. At first we add intial state into front
 	<span class="n">end_y</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
 	<span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
 	<span class="n">l</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="k">global</span> <span class="n">MAP_LENGHT</span>
+	<span class="k">global</span> <span class="n">MAP_WIDTH</span>
+	<span class="k">global</span> <span class="n">NUMBER_OF_FELLOWS</span>
 	<span class="n">eurekas_x</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
 	<span class="n">eurekas_y</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
 	<span class="n">eureka_manhattan</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
@@ -15147,9 +15160,12 @@ and the value of the heuristic function. At first we add intial state into front
 	<span class="n">game_map</span> <span class="o">=</span> <span class="p">[]</span>
 	<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
 		<span class="n">n</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">next</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)]</span>
+		<span class="n">MAP_LENGHT</span> <span class="o">=</span> <span class="n">n</span>
+		<span class="n">MAP_WIDTH</span> <span class="o">=</span> <span class="n">m</span>       
 		<span class="n">gandalf_x</span><span class="p">,</span> <span class="n">gandalf_y</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">next</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)]</span>
 		<span class="n">end_x</span><span class="p">,</span> <span class="n">end_y</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">next</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)]</span>
 		<span class="n">k</span><span class="p">,</span> <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">next</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)]</span>
+		<span class="n">NUMBER_OF_FELLOWS</span> <span class="o">=</span> <span class="n">l</span>
 		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
 			<span class="n">game_map</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">BLANK</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">)])</span>
 		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
@@ -15304,7 +15320,7 @@ and the value of the heuristic function. At first we add intial state into front
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Testcase #1....</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -15332,38 +15348,38 @@ and the value of the heuristic function. At first we add intial state into front
 
 $ BFS $
 Path Cost: 48
-Path:  R R R R R R R R R R R R R R R R R R R R R R R R R R R R R D R U D U R D U R D R U D R R R R R R
-Number of Visited States: 10514
-Number of Unique Visited States: 6433
-Average Execution Time for 3 BFS runs: 0.1828125317891439 seconds
+Path:  R R R R R R R R R R R R R R R R R R R R R R R R R R R R R D U R D R U D U R D U R D R R R R R R
+Number of Visited States: 10626
+Number of Unique Visited States: 6496
+Average Execution Time for 3 BFS runs: 0.1818990707397461 seconds
 
 $ IDS $
 Path Cost: 48
-Path: R R R R R R D U R D R U D R U D U R D R R R R R R R R R R R R R R R R R R R R R R R R R R R R R 
-Number of Visited States: 48288
-Number of Unique Visited States: 7115
-Average Execution Time for 3 IDS runs: 0.9722627798716227 seconds
+Path: R R R R R R D R U D U R D U R D U R D R R R R R R R R R R R R R R R R R R R R R R R R R R R R R 
+Number of Visited States: 50456
+Number of Unique Visited States: 7296
+Average Execution Time for 3 IDS runs: 0.9403608640034994 seconds
 
 $ A* Search $
 Path Cost: 48
-Path:  R R R R R R R R R R R R R R R R R R R R R R R R R R R R R D R U D R U D R U D R U D R R R R R R
+Path:  R R R R R R R R R R R R R R R R R R R R R R R R R R R R R D R U D U R D U R D U R D R R R R R R
 Number of Visited States: 817
 Number of Unique Visited States: 566
-Average Execution Time for 3 A* runs: 0.017334858576456707 seconds
+Average Execution Time for 3 A* runs: 0.01820818583170573 seconds
 
 $ Weighted A* Search with Alpha = 2.25 $
 Path Cost: 48
-Path:  R R R R R R R R R R R R R R R R R R R R R R R R R R R R R D R U D U R D R U D R U D R R R R R R
-Number of Visited States: 97
+Path:  R R R R R R R R R R R R R R R R R R R R R R R R R R R R R D R U D R U D R U D U R D R R R R R R
+Number of Visited States: 98
 Number of Unique Visited States: 97
-Average Execution Time for 3 A* runs: 0.003204981486002604 seconds
+Average Execution Time for 3 A* runs: 0.003406524658203125 seconds
 
 $ Weighted A* Search with Alpha = 12.25 $
 Path Cost: 48
-Path:  R R R R R R R R R R R R R R R R R R R R R R R R R R R R R D R U D U R D R U D U R D R R R R R R
-Number of Visited States: 56
-Number of Unique Visited States: 56
-Average Execution Time for 3 A* runs: 0.002059777577718099 seconds
+Path:  R R R R R R R R R R R R R R R R R R R R R R R R R R R R R D R U D R U D U R D R U D R R R R R R
+Number of Visited States: 63
+Number of Unique Visited States: 63
+Average Execution Time for 3 A* runs: 0.002214193344116211 seconds
 
 </pre>
 </div>
@@ -15376,7 +15392,7 @@ Average Execution Time for 3 A* runs: 0.002059777577718099 seconds
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Testcase #2....</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -15404,38 +15420,38 @@ Average Execution Time for 3 A* runs: 0.002059777577718099 seconds
 
 $ BFS $
 Path Cost: 52
-Path:  R D R D R R D D D D L L D D L R R R U U U R U U R L L D D D D L D R R R R U R U U U D D D L D L L R R R
-Number of Visited States: 2034
-Number of Unique Visited States: 1386
-Average Execution Time for 3 BFS runs: 0.03233790397644043 seconds
+Path:  D R R D R R L L D D D D D D L U R U R R U R U U R D L D L D L D D U U R U U R R R R D D D L D L L R R R
+Number of Visited States: 2012
+Number of Unique Visited States: 1374
+Average Execution Time for 3 BFS runs: 0.033147970835367836 seconds
 
 $ IDS $
 Path Cost: 52
-Path: R R R L L L D D D D R R R U R U U R U L D D D D L L D R U U R U R U R U R D L D D D L D L D R R D R R D 
-Number of Visited States: 32180
-Number of Unique Visited States: 1396
-Average Execution Time for 3 IDS runs: 0.6083103815714518 seconds
+Path: R R R L L D L D D D R R R R U U U U R D D L D D D L L U R R U U R U R U R L D D D D L L D D R R D R R D 
+Number of Visited States: 32439
+Number of Unique Visited States: 1394
+Average Execution Time for 3 IDS runs: 0.6099960803985596 seconds
 
 $ A* Search $
 Path Cost: 52
-Path:  R R D D R R D D L L D D D L D U R U U U U R R R R L L D D D D L D U R U U R U R R R D D D D L L L R R R
+Path:  R D R D R R L L D D D D D D L R R R U U U U R R U L L D D D L D D R U U U U R R R R D D D D L L L R R R
 Number of Visited States: 1431
 Number of Unique Visited States: 991
-Average Execution Time for 3 A* runs: 0.02360693613688151 seconds
+Average Execution Time for 3 A* runs: 0.02450903256734212 seconds
 
 $ Weighted A* Search with Alpha = 2.25 $
-Path Cost: 52
-Path:  R R D D R R D D D D D L L D L U R U U U R U R R R D L D L D L D D U R U U R U R R R D D D L D L L R R R
-Number of Visited States: 1333
-Number of Unique Visited States: 923
-Average Execution Time for 3 A* runs: 0.022415320078531902 seconds
+Path Cost: 54
+Path:  R R D D R R L D D L D D D L D U R R R U U R U R U L L D D D L D D R U U U R U R R R L L L D L D D R D R R R
+Number of Visited States: 1337
+Number of Unique Visited States: 926
+Average Execution Time for 3 A* runs: 0.02355305353800456 seconds
 
 $ Weighted A* Search with Alpha = 12.25 $
-Path Cost: 52
-Path:  R D R D R R D L D L D D D L D U R R R U U U R U R L L D D D L D D R U U U R U R R R D D D L D L L R R R
-Number of Visited States: 715
-Number of Unique Visited States: 507
-Average Execution Time for 3 A* runs: 0.012176036834716797 seconds
+Path Cost: 54
+Path:  R R D D R R L L D D D D D L D U R R U R U U R U R L D D L D D D L U U R U U R R R R L L L D L D D R D R R R
+Number of Visited States: 714
+Number of Unique Visited States: 505
+Average Execution Time for 3 A* runs: 0.01245276133219401 seconds
 
 </pre>
 </div>
@@ -15448,7 +15464,7 @@ Average Execution Time for 3 A* runs: 0.012176036834716797 seconds
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Testcase #3....</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -15476,38 +15492,38 @@ Average Execution Time for 3 A* runs: 0.012176036834716797 seconds
 
 $ BFS $
 Path Cost: 34
-Path:  R R R R R R R D L L L L D D D L D L L D D R R U U R U R R D R R D D
-Number of Visited States: 550
-Number of Unique Visited States: 384
-Average Execution Time for 3 BFS runs: 0.008709987004597982 seconds
+Path:  R R R R R R R D D D L D L L L D L L L R D D U U R R U R R D R R D D
+Number of Visited States: 541
+Number of Unique Visited States: 377
+Average Execution Time for 3 BFS runs: 0.010972261428833008 seconds
 
 $ IDS $
 Path Cost: 34
-Path: D D R R D R R U R U R U D D R L L D L D D D D L L L L R R R R R R R 
-Number of Visited States: 5403
-Number of Unique Visited States: 400
-Average Execution Time for 3 IDS runs: 0.08667667706807454 seconds
+Path: D D R R D R R R U U U R R D D L L D L D L D D L L D L R R R R R R R 
+Number of Visited States: 5370
+Number of Unique Visited States: 403
+Average Execution Time for 3 IDS runs: 0.0842591126759847 seconds
 
 $ A* Search $
 Path Cost: 34
-Path:  R R R R R R R L L D L L D D D L D L L R D D U U R R U R R R D D D R
+Path:  R R R R R R R D D D D L L L L L D L L R D D R U U R U R R D R R D D
 Number of Visited States: 179
 Number of Unique Visited States: 125
-Average Execution Time for 3 A* runs: 0.0028246243794759116 seconds
+Average Execution Time for 3 A* runs: 0.0031261444091796875 seconds
 
 $ Weighted A* Search with Alpha = 2.25 $
 Path Cost: 34
-Path:  R R R R R R R D L L D D L L D L D L L D D R R U U R U R R D R D D R
-Number of Visited States: 61
-Number of Unique Visited States: 56
-Average Execution Time for 3 A* runs: 0.0012476444244384766 seconds
+Path:  R R R R R R R D D D D L L L L L D L L D R D U U R R U R R R D D D R
+Number of Visited States: 55
+Number of Unique Visited States: 52
+Average Execution Time for 3 A* runs: 0.0012671152750651042 seconds
 
 $ Weighted A* Search with Alpha = 12.25 $
 Path Cost: 34
-Path:  R R R R R R R D L L D L D L D D L L L R D D R U U R U R R D R R D D
-Number of Visited States: 51
-Number of Unique Visited States: 47
-Average Execution Time for 3 A* runs: 0.0010909239451090496 seconds
+Path:  R R R R R R R D L L L D D L D D L L L D R D R U U R U R R D R D D R
+Number of Visited States: 52
+Number of Unique Visited States: 49
+Average Execution Time for 3 A* runs: 0.0011111895243326824 seconds
 
 </pre>
 </div>
@@ -15520,7 +15536,7 @@ Average Execution Time for 3 A* runs: 0.0010909239451090496 seconds
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Testcase #4....</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -15548,38 +15564,38 @@ Average Execution Time for 3 A* runs: 0.0010909239451090496 seconds
 
 $ BFS $
 Path Cost: 66
-Path:  R R D D D D D L D L D D D R R R U U R R U U R R R R U U U U U L L L D D D D L D D L D D L L L D U R U U U R R R U R R R R D D D D D
-Number of Visited States: 5905
-Number of Unique Visited States: 3947
-Average Execution Time for 3 BFS runs: 0.0879673957824707 seconds
+Path:  D R R D D D D L D L D D R D R R U U R R U U R U U U R U U R R L L L L L L D L D D D D D D D L D R R U U R U U U R R R R R D D D D D
+Number of Visited States: 5862
+Number of Unique Visited States: 3919
+Average Execution Time for 3 BFS runs: 0.09465392430623372 seconds
 
 $ IDS $
 Path Cost: 66
-Path: D D D D D R R R R R R R U U U U R U D L L D L D L D L D D D D D L L L U U U U R U R R R U U R R R U R U R D D D L D L D D R D D D R 
-Number of Visited States: 102641
-Number of Unique Visited States: 3963
-Average Execution Time for 3 IDS runs: 2.058258851369222 seconds
+Path: D D D D D R R R R R R R U U U U R U L D D D D D D D D L D L L L L L L U U U R R R U U R U U R U R R R U R D D D L D L D D D R R D D 
+Number of Visited States: 102685
+Number of Unique Visited States: 3965
+Average Execution Time for 3 IDS runs: 2.070507764816284 seconds
 
 $ A* Search $
 Path Cost: 66
-Path:  R D D D R D D D L L D D R D R R R U U U U R R R U U U U R R U L L L D D D L D D D L D D L L L D R U R U R U R U U R R R R D D D D D
+Path:  D D R D R D D L D L D D R D U R U R R U R U R U R U U U R U R L L L L L L L D D D D D D D D D L R U R U R U U U R R R R R D D D D D
 Number of Visited States: 3057
 Number of Unique Visited States: 2079
-Average Execution Time for 3 A* runs: 0.06484254201253255 seconds
+Average Execution Time for 3 A* runs: 0.05687069892883301 seconds
 
 $ Weighted A* Search with Alpha = 2.25 $
-Path Cost: 68
-Path:  D D R D R D D D D D L L R D U R R R R U U U U R R R R U U U U L L L L L L L L D D D R D D D D D L D R U U U U R U R R R R R R D D D D D
-Number of Visited States: 1047
-Number of Unique Visited States: 737
-Average Execution Time for 3 A* runs: 0.02325598398844401 seconds
+Path Cost: 66
+Path:  R D D D R D D L D L D D R D U R U R R R U U U R U R U U R R U L L L D D D L D D L L L D D D D L U R U U U R R U R R R R R D D D D D
+Number of Visited States: 1012
+Number of Unique Visited States: 708
+Average Execution Time for 3 A* runs: 0.02053181330362956 seconds
 
 $ Weighted A* Search with Alpha = 12.25 $
-Path Cost: 68
-Path:  R D D D R D D L D L D D R D U R U R R U R U U R R U U U R R U L L L L L L L L D D D R D D D D D D L R R U U R R U U U R R R R D D D D D
-Number of Visited States: 448
-Number of Unique Visited States: 321
-Average Execution Time for 3 A* runs: 0.011656840642293295 seconds
+Path Cost: 66
+Path:  R D D D R D D L D L D D R D U R U R R U R R U U U U U U R R R L L L D D D D L D L L L D D D L D U R U U U R U R R R R R R D D D D D
+Number of Visited States: 683
+Number of Unique Visited States: 487
+Average Execution Time for 3 A* runs: 0.010846932729085287 seconds
 
 </pre>
 </div>
@@ -15609,6 +15625,7 @@ Average Execution Time for 3 A* runs: 0.011656840642293295 seconds
 <li>If a solution is far away then it consumes time.</li>
 <li>Memory Constraints As it stores all the nodes of the present level to go for the next level.</li>
 </ul>
+<p>BFS is optimal if cost = 1 per step (if the path cost is a nondecreasing function of the depth of the node)</p>
 <h4 id="IDS:">IDS:<a class="anchor-link" href="#IDS:">&#182;</a></h4><p>IDS is much slower than the other search algorithms again one reason being that IDS is uninformed but it's main advantage is it's memory. It can operate with just a stack proportional to the depth of one branch.</p>
 <p><em>Advantages:</em></p>
 <ul>
@@ -15618,8 +15635,17 @@ Average Execution Time for 3 A* runs: 0.011656840642293295 seconds
 <ul>
 <li>The main problem with IDS is the time and wasted calculations that take place at each depth.</li>
 </ul>
+<p>IDS is optimal if step cost = 1</p>
 <h4 id="A*:">A*:<a class="anchor-link" href="#A*:">&#182;</a></h4><p>A<em> is a very fast search algorithm a good thing about is that A</em> is an informed search algorithm so this means it uses a heuristic function to search in the rational direction.</p>
+<p>If h(n) is consistent, then the values of f(n) along any path are nondecreasing. Whenever A∗ selects a node n for expansion, the optimal path to that node has been found.</p>
+<p>If A* returns a solution, that solution is guaranteed to be optimal, as long as:</p>
+<ul>
+<li>the branching factor is finite</li>
+<li>arc costs are strictly positive</li>
+<li>h(n) is an underestimate of the length of the shortest path from n to a goal node, and is non-negative</li>
+</ul>
 <h4 id="Weighted-A*:">Weighted A*:<a class="anchor-link" href="#Weighted-A*:">&#182;</a></h4><p>Weighted A<em> is completely similar to A</em> but calculating f(n) is different. This difference will result in even faster search algorithm but the disadvantage can be missing the optimal path.</p>
+<p>The idea of Weighted A<em> is speed up search at the expense of optimality Take an admissible heuristic, “inflate” it by a multiple α &gt; 1, and then perform A</em> search as usual. Fewer nodes tend to get expanded, but the resulting solution may be suboptimal (its cost will be at most α times the cost of the optimal solution)</p>
 
 </div>
 </div>
