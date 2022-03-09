@@ -15060,7 +15060,7 @@ and the value of the heuristic function. At first we add intial state into front
 			<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">is_helpers_reach_des</span><span class="p">)):</span>
 				<span class="k">if</span> <span class="n">is_helpers_reach_des</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span> 
 					<span class="n">manhattan</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">gandalf_x</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">helpers_x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="nb">abs</span><span class="p">(</span><span class="n">gandalf_y</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">helpers_y</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">helpers_x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">des_helpers_x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">helpers_y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">des_helpers_y</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-					<span class="c1"># manhattan += abs(self.end_x - self.des_helpers_x[i]) + abs(self.end_y - self.des_helpers_y[i])</span>
+					<span class="n">manhattan</span> <span class="o">+=</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">end_x</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">des_helpers_x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">end_y</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">des_helpers_y</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 					<span class="k">if</span> <span class="n">manhattan</span> <span class="o">&gt;</span> <span class="n">min_distance</span><span class="p">:</span>
 						<span class="n">min_distance</span> <span class="o">=</span> <span class="n">manhattan</span>                       
 					<span class="n">sum_distance</span> <span class="o">=</span> <span class="n">min_distance</span>
@@ -15332,38 +15332,38 @@ and the value of the heuristic function. At first we add intial state into front
 
 $ BFS $
 Path Cost: 48
-Path:  R R R R R R R R R R R R R R R R R R R R R R R R R R R R R D U R D U R D U R D U R D R R R R R R
-Number of Visited States: 10496
-Number of Unique Visited States: 6423
-Average Execution Time for 3 BFS runs: 0.18227211634318033 seconds
+Path:  R R R R R R R R R R R R R R R R R R R R R R R R R R R R R D R U D U R D U R D R U D R R R R R R
+Number of Visited States: 10514
+Number of Unique Visited States: 6433
+Average Execution Time for 3 BFS runs: 0.1828125317891439 seconds
 
 $ IDS $
 Path Cost: 48
-Path: R R R R R R D R U D U R D R U D R U D R R R R R R R R R R R R R R R R R R R R R R R R R R R R R 
-Number of Visited States: 48306
-Number of Unique Visited States: 7107
-Average Execution Time for 3 IDS runs: 0.9962066014607748 seconds
+Path: R R R R R R D U R D R U D R U D U R D R R R R R R R R R R R R R R R R R R R R R R R R R R R R R 
+Number of Visited States: 48288
+Number of Unique Visited States: 7115
+Average Execution Time for 3 IDS runs: 0.9722627798716227 seconds
 
 $ A* Search $
 Path Cost: 48
-Path:  R R R R R R R R R R R R R R R R R R R R R R R R R R R R R D U R D U R D U R D R U D R R R R R R
-Number of Visited States: 2156
-Number of Unique Visited States: 1463
-Average Execution Time for 3 A* runs: 0.046573638916015625 seconds
+Path:  R R R R R R R R R R R R R R R R R R R R R R R R R R R R R D R U D R U D R U D R U D R R R R R R
+Number of Visited States: 817
+Number of Unique Visited States: 566
+Average Execution Time for 3 A* runs: 0.017334858576456707 seconds
 
 $ Weighted A* Search with Alpha = 2.25 $
 Path Cost: 48
-Path:  R R R R R R R R R R R R R R R R R R R R R R R R R R R R R D U R D R U D U R D R U D R R R R R R
-Number of Visited States: 1370
-Number of Unique Visited States: 993
-Average Execution Time for 3 A* runs: 0.03891619046529134 seconds
+Path:  R R R R R R R R R R R R R R R R R R R R R R R R R R R R R D R U D U R D R U D R U D R R R R R R
+Number of Visited States: 97
+Number of Unique Visited States: 97
+Average Execution Time for 3 A* runs: 0.003204981486002604 seconds
 
 $ Weighted A* Search with Alpha = 12.25 $
 Path Cost: 48
-Path:  R R R R R R R R R R R R R R R R R R R R R R R R R R R R R D R U D R U D U R D R U D R R R R R R
-Number of Visited States: 2896
-Number of Unique Visited States: 1933
-Average Execution Time for 3 A* runs: 0.0641783078511556 seconds
+Path:  R R R R R R R R R R R R R R R R R R R R R R R R R R R R R D R U D U R D R U D U R D R R R R R R
+Number of Visited States: 56
+Number of Unique Visited States: 56
+Average Execution Time for 3 A* runs: 0.002059777577718099 seconds
 
 </pre>
 </div>
@@ -15404,38 +15404,38 @@ Average Execution Time for 3 A* runs: 0.0641783078511556 seconds
 
 $ BFS $
 Path Cost: 52
-Path:  D R R D R R D L L D D D D L D U R R U R U U R U R D L L D D D L D U U R U U R R R R D D D L D L L R R R
-Number of Visited States: 2022
-Number of Unique Visited States: 1380
-Average Execution Time for 3 BFS runs: 0.03230659166971842 seconds
+Path:  R D R D R R D D D D L L D D L R R R U U U R U U R L L D D D D L D R R R R U R U U U D D D L D L L R R R
+Number of Visited States: 2034
+Number of Unique Visited States: 1386
+Average Execution Time for 3 BFS runs: 0.03233790397644043 seconds
 
 $ IDS $
 Path Cost: 52
-Path: R R R L L D L D D D U U U U R R R R R D D L D L D L D U R R U U R R U R U L D D D D D D L L R R D R D R 
-Number of Visited States: 32407
-Number of Unique Visited States: 1398
-Average Execution Time for 3 IDS runs: 0.5993929704030355 seconds
+Path: R R R L L L D D D D R R R U R U U R U L D D D D L L D R U U R U R U R U R D L D D D L D L D R R D R R D 
+Number of Visited States: 32180
+Number of Unique Visited States: 1396
+Average Execution Time for 3 IDS runs: 0.6083103815714518 seconds
 
 $ A* Search $
 Path Cost: 52
-Path:  D R R D R R L L D D D D D L D R R R U U U R U R U L D D L D L D D R U U U U R R R R D D D L D L L R R R
-Number of Visited States: 1540
-Number of Unique Visited States: 1058
-Average Execution Time for 3 A* runs: 0.025350491205851238 seconds
+Path:  R R D D R R D D L L D D D L D U R U U U U R R R R L L D D D D L D U R U U R U R R R D D D D L L L R R R
+Number of Visited States: 1431
+Number of Unique Visited States: 991
+Average Execution Time for 3 A* runs: 0.02360693613688151 seconds
 
 $ Weighted A* Search with Alpha = 2.25 $
 Path Cost: 52
-Path:  R D R D R R D D D D D L D L L R R U U R U U R R U L L D D D L D D R R R R U R U U U D D D D L L L R R R
-Number of Visited States: 1408
-Number of Unique Visited States: 971
-Average Execution Time for 3 A* runs: 0.023917992909749348 seconds
+Path:  R R D D R R D D D D D L L D L U R U U U R U R R R D L D L D L D D U R U U R U R R R D D D L D L L R R R
+Number of Visited States: 1333
+Number of Unique Visited States: 923
+Average Execution Time for 3 A* runs: 0.022415320078531902 seconds
 
 $ Weighted A* Search with Alpha = 12.25 $
-Path Cost: 56
-Path:  R D R D R R D L L L D D L D D R D R R R U U U U R R R R D D D D L L L U L U U R U R U D L L D D D D L R R R R R
-Number of Visited States: 1365
-Number of Unique Visited States: 947
-Average Execution Time for 3 A* runs: 0.02148747444152832 seconds
+Path Cost: 52
+Path:  R D R D R R D L D L D D D L D U R R R U U U R U R L L D D D L D D R U U U R U R R R D D D L D L L R R R
+Number of Visited States: 715
+Number of Unique Visited States: 507
+Average Execution Time for 3 A* runs: 0.012176036834716797 seconds
 
 </pre>
 </div>
@@ -15476,38 +15476,38 @@ Average Execution Time for 3 A* runs: 0.02148747444152832 seconds
 
 $ BFS $
 Path Cost: 34
-Path:  R R R R R R R D L L D D L D L D L L L R D D U R U R U R R R D D R D
-Number of Visited States: 544
-Number of Unique Visited States: 380
-Average Execution Time for 3 BFS runs: 0.009004354476928711 seconds
+Path:  R R R R R R R D L L L L D D D L D L L D D R R U U R U R R D R R D D
+Number of Visited States: 550
+Number of Unique Visited States: 384
+Average Execution Time for 3 BFS runs: 0.008709987004597982 seconds
 
 $ IDS $
 Path Cost: 34
-Path: D D R R D R R R U U U R D R D L L D L D D D D L L L L R R R R R R R 
-Number of Visited States: 5385
-Number of Unique Visited States: 403
-Average Execution Time for 3 IDS runs: 0.09340977668762207 seconds
+Path: D D R R D R R U R U R U D D R L L D L D D D D L L L L R R R R R R R 
+Number of Visited States: 5403
+Number of Unique Visited States: 400
+Average Execution Time for 3 IDS runs: 0.08667667706807454 seconds
 
 $ A* Search $
 Path Cost: 34
-Path:  R R R R R R R D L L D L L D D L D L L R D D R U U R U R R R D R D D
-Number of Visited States: 218
-Number of Unique Visited States: 151
-Average Execution Time for 3 A* runs: 0.0033382574717203775 seconds
+Path:  R R R R R R R L L D L L D D D L D L L R D D U U R R U R R R D D D R
+Number of Visited States: 179
+Number of Unique Visited States: 125
+Average Execution Time for 3 A* runs: 0.0028246243794759116 seconds
 
 $ Weighted A* Search with Alpha = 2.25 $
 Path Cost: 34
-Path:  R R R R R R R L D L L L D D D L D L L R D D U U R R U R R D R D D R
-Number of Visited States: 105
-Number of Unique Visited States: 84
-Average Execution Time for 3 A* runs: 0.002057790756225586 seconds
+Path:  R R R R R R R D L L D D L L D L D L L D D R R U U R U R R D R D D R
+Number of Visited States: 61
+Number of Unique Visited States: 56
+Average Execution Time for 3 A* runs: 0.0012476444244384766 seconds
 
 $ Weighted A* Search with Alpha = 12.25 $
 Path Cost: 34
-Path:  R R R R R R R L D L D L L D D D L L L R D D R U U R U R R R D R D D
-Number of Visited States: 107
-Number of Unique Visited States: 82
-Average Execution Time for 3 A* runs: 0.0020051797231038413 seconds
+Path:  R R R R R R R D L L D L D L D D L L L R D D R U U R U R R D R R D D
+Number of Visited States: 51
+Number of Unique Visited States: 47
+Average Execution Time for 3 A* runs: 0.0010909239451090496 seconds
 
 </pre>
 </div>
@@ -15548,38 +15548,38 @@ Average Execution Time for 3 A* runs: 0.0020051797231038413 seconds
 
 $ BFS $
 Path Cost: 66
-Path:  D R R D D D D L D L D D R D R R U R R U U U R U R U R R U U U L L D L D D D L D L D D D L L L D R R U R R U U U U R R R R D D D D D
-Number of Visited States: 5867
-Number of Unique Visited States: 3923
-Average Execution Time for 3 BFS runs: 0.09108376502990723 seconds
+Path:  R R D D D D D L D L D D D R R R U U R R U U R R R R U U U U U L L L D D D D L D D L D D L L L D U R U U U R R R U R R R R D D D D D
+Number of Visited States: 5905
+Number of Unique Visited States: 3947
+Average Execution Time for 3 BFS runs: 0.0879673957824707 seconds
 
 $ IDS $
 Path Cost: 66
-Path: D D D D D R R R R R U U U R R U R U L D D L L D L L D D D D D D L L L R R R U U U R U R R U R U U U R U D R D D L L D D D R D D D R 
-Number of Visited States: 102966
-Number of Unique Visited States: 3960
-Average Execution Time for 3 IDS runs: 2.0977691809336343 seconds
+Path: D D D D D R R R R R R R U U U U R U D L L D L D L D L D D D D D L L L U U U U R U R R R U U R R R U R U R D D D L D L D D R D D D R 
+Number of Visited States: 102641
+Number of Unique Visited States: 3963
+Average Execution Time for 3 IDS runs: 2.058258851369222 seconds
 
 $ A* Search $
 Path Cost: 66
-Path:  R D D D R D D L D L D D R D R R U R U R U U R R U U R R U U U L L D L D D L D L D L L D D D L D U R R U R R U U U R R R R D D D D D
-Number of Visited States: 3867
-Number of Unique Visited States: 2628
-Average Execution Time for 3 A* runs: 0.07025472323099773 seconds
+Path:  R D D D R D D D L L D D R D R R R U U U U R R R U U U U R R U L L L D D D L D D D L D D L L L D R U R U R U R U U R R R R D D D D D
+Number of Visited States: 3057
+Number of Unique Visited States: 2079
+Average Execution Time for 3 A* runs: 0.06484254201253255 seconds
 
 $ Weighted A* Search with Alpha = 2.25 $
-Path Cost: 66
-Path:  R D D D R D D D L L D D R D R U R U R U U R U U R R U U R U R L L L D D D L D D L L L D D D D L U R U R R R U U U R R R R D D D D D
-Number of Visited States: 2045
-Number of Unique Visited States: 1439
-Average Execution Time for 3 A* runs: 0.04345385233561198 seconds
+Path Cost: 68
+Path:  D D R D R D D D D D L L R D U R R R R U U U U R R R R U U U U L L L L L L L L D D D R D D D D D L D R U U U U R U R R R R R R D D D D D
+Number of Visited States: 1047
+Number of Unique Visited States: 737
+Average Execution Time for 3 A* runs: 0.02325598398844401 seconds
 
 $ Weighted A* Search with Alpha = 12.25 $
-Path Cost: 88
-Path:  R R R R R D R D D D D L L D D D L L D L U R U U U R R U R U R U U U R R R L L L L L L L D L D D R D D D D D L D U R U U U U U D D L D L D D U U R R U U R R R R R R R D D D D D
-Number of Visited States: 1491
-Number of Unique Visited States: 1066
-Average Execution Time for 3 A* runs: 0.02855507532755534 seconds
+Path Cost: 68
+Path:  R D D D R D D L D L D D R D U R U R R U R U U R R U U U R R U L L L L L L L L D D D R D D D D D D L R R U U R R U U U R R R R D D D D D
+Number of Visited States: 448
+Number of Unique Visited States: 321
+Average Execution Time for 3 A* runs: 0.011656840642293295 seconds
 
 </pre>
 </div>
